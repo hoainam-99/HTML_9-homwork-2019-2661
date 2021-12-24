@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sản Phẩm</title>
+    <style>
+        .container{
+            width: 600px;
+
+        }
+
+        .input-product{
+            width: 100%;
+            border: 0.5px solid rgb(71, 71, 221);
+        }
+
+        h3{
+            padding: 7px 20px;
+            margin: 0;
+            margin-bottom: 12px;
+            background-color: rgb(81, 81, 236);
+            color: white;
+        }
+
+        .input-product label,
+        .input-product input,
+        .input-product select{
+            width: 90%;
+            margin: 10px 20px;
+            padding: 6px;
+            font-size: 18px;
+        }
+
+        .input-product label{
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .input-product button{
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            transition: 0.25s;
+        }
+
+        button:hover{
+            transform: scale(0.9);
+        }
+
+        .manage-product{
+            width: 700px;
+            margin-top: 20px;
+            border: 0.5px solid rgb(71, 71, 221);
+            padding: 4px auto;
+        }
+
+        .manage-product table{
+            margin: 0 auto;
+        }
+        
+        .manage-product button{
+            padding: 7px 12px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            transition: 0.25s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-product">
+            <h3>Input product's detail information</h3>
+            <form action="" onsubmit=" return saveData()">
+                <label for="manu-name_id">Manufacturer Name:</label>
+                <select name="manufacturer-name" id="manu-name_id" onchange="selectManu(this)">
+                    <option value="0">---Select---</option>
+                    <option value="Apple">Apple</option>
+                    <option value="SamSung">Sam Sung</option>
+                    <option value="LG">LG</option>
+                    <option value="Sony">Sony</option>
+                    <option value="Google">Google</option>
+                </select>
+                <label for="category-name_id">Category Name:</label>
+                <select name="category-name" id="category-name_id">
+
+                </select>
+                <label for="product_id">Product Name:</label>
+                <input type="text" required name="product-name" id="product_id" placeholder="Enter product name">
+                <label for="price_id">Unit Price:</label>
+                <input type="number" required name="price" id="price_id" placeholder="0" onkeyup="sum()">
+                <label for="quanity_id">Quanity:</label>
+                <input type="number" required name="quanity" id="quanity_id" placeholder="0" onkeyup="sum()">
+                <label for="">Total Price:</label>
+                <input type="text" disabled id="totalPrice_id" placeholder="0">
+                <button type="submit" style="background-color: rgb(92, 204, 92);">Add Product</button>
+                <button type="reset" style="background-color: rgb(230, 163, 39);" onclick="resetBtn()">Reset</button>
+            </form>
+        </div>
+        <div class="manage-product">
+            <h3>Management Products</h3>
+            <table border="1" cellpadding="5">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Product Name</th>
+                        <th>Category Name</th>
+                        <th>Price</th>
+                        <th>Quanity</th>
+                        <th>Manufacturer Name</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="result_id">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="./assets/js/app.js"></script>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tương tác Tag bằng html</title>
+    <style>
+        .container button{
+            padding: 10px;
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .container th{
+            width: 150px;
+            height: 35px;
+            font-size: 24px;
+            color: rgb(73, 73, 73);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="showStd()">Thêm 20 sinh viên</button>
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Ho Ten</th>
+                    <th>Tuoi</th>
+                    <th>Dia Chi</th>
+                </tr>
+            </thead>
+            <tbody id="result_id">
+                
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var studentList = [{
+            "fullname" : "Le Hoai Nam",
+            "age" : 23,
+            "address" : "Vinh Phuc"
+        },{
+            "fullname" : "Doan Ha Anh",
+            "age" : 18,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Do Tu Hung",
+            "age" : 29,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Nguyen Van Truong",
+            "age" : 18,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Nguyen Chi Thanh",
+            "age" : 18,
+            "address" : "Hung Yen"
+        },{
+            "fullname" : "Chu Van Thao",
+            "age" : 18,
+            "address" : "Bac Ninh"
+        },{
+            "fullname" : "Nguyen Thanh Tung",
+            "age" : 23,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Nguyen Ba Nam",
+            "age" : 18,
+            "address" : "Son La"
+        },{
+            "fullname" : "Nguyen Linh Chi",
+            "age" : 18,
+            "address" : "Thai Binh"
+        },{
+            "fullname" : "Nguyen Duy Manh",
+            "age" : 19,
+            "address" : "Vinh Phuc"
+        },{
+            "fullname" : "Do Minh Thanh",
+            "age" : 18,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Le Van The Anh",
+            "age" : 18,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Dinh Hoang Nhat Minh",
+            "age" : 18,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Nguyen Ba Truong",
+            "age" : 18,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Nguyen Hoang Gia",
+            "age" : 18,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Nguyen Van Dai",
+            "age" : 18,
+            "address" : "Hung Yen"
+        },{
+            "fullname" : "Vu Tien Dat",
+            "age" : 19,
+            "address" : "Ha Noi"
+        },{
+            "fullname" : "Pham Quoc Thang",
+            "age" : 18,
+            "address" : "Lao Cai"
+        },{
+            "fullname" : "Tran Hoang Viet",
+            "age" : 19,
+            "address" : "Ha Giang"
+        },{
+            "fullname" : "Vu Tien Tuan",
+            "age" : 20,
+            "address" : "Ha Noi"
+        }]
+        console.log(studentList)
+
+        function showStd(){
+            var result = document.getElementById('result_id')
+            for (var i = 0; i < studentList.length; i++){
+                var std = studentList[i]
+                result.innerHTML += `
+                <tr>
+                    <td>${i+1}</td>
+                    <td>${std.fullname}</td>
+                    <td>${std.age}</td>
+                    <td>${std.address}</td>
+                </tr>`
+            }
+        }
+    </script>
+</body>
+</html>
